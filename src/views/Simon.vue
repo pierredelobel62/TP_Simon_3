@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="simon">
     <PlayButton v-on:launch-game="launchCountdown"></PlayButton>
     <Level ref="levelComponent" v-show="gameLaunched"></Level>
     <Countdown
@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import SimonButton from "./SimonButton.vue";
-import Countdown from "./Countdown.vue";
-import PlayButton from "./PlayButton.vue";
-import Level from "./Level.vue";
+import SimonButton from "@/components/SimonButton.vue";
+import Countdown from "@/components/Countdown.vue";
+import PlayButton from "@/components/PlayButton.vue";
+import Level from "@/components/Level.vue";
 
 export default {
-  name: "Home",
+  name: "Simon",
   components: {
     SimonButton,
     Countdown,
@@ -108,9 +108,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-#home {
+#simon {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#simon #buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#simon #buttons button {
+  
 }
 </style>

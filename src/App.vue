@@ -1,69 +1,43 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/games">Mes jeux</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import Home from './components/Home.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Home
-  }
-}
-</script>
-
 <style>
 #app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: sans-serif;
-}
-
-#app #buttons {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#app #buttons button {
-  width: 45%;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 100px;
-  margin: 10px;
-  outline: none;
-  background-color: white;
+  color: #2c3e50;
+  width: 70%;
+  margin: auto;
 }
 
-.red {
-  border: 1px solid red;
-}
-.red.active {
-  background-color: red !important;
+#nav {
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.yellow {
-  border: 1px solid yellow;
-}
-.yellow.active {
-  background-color: yellow !important;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-.purple {
-  border: 1px solid purple;
-}
-.purple.active {
-  background-color: purple !important;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 
-.blue {
-  border: 1px solid blue;
+ul {
+  padding: 0;
 }
-.blue.active {
-  background-color: blue !important;
+
+li {
+  list-style-type: none;
 }
 </style>
